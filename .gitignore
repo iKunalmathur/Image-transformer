@@ -28,9 +28,8 @@ Thumbs.db
 
 # Project Specific
 images/
-output/
+/output/
 *.log
-
 
 # Model Cache (rembg downloads models)
 .u2net/
