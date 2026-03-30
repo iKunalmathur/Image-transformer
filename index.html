@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Background Transformer - AI-Powered Background Removal</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transform your product images with AI-powered background removal and replacement. Remove backgrounds and add professional studio backgrounds in seconds. Perfect for automotive dealers, e-commerce, and product photography.">
+    <meta name="keywords" content="background removal, AI background remover, product photography, image transformer, automotive photography, e-commerce images, rembg, U-2-Net, batch image processing">
+    <meta name="author" content="Kunal Mathur">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Image Background Transformer - AI-Powered Background Removal">
+    <meta property="og:description" content="Transform your product images with AI-powered background removal and replacement. Process hundreds of images in seconds with professional results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/iKunalmathur/Image-transformer">
+    <meta property="og:image" content="https://raw.githubusercontent.com/iKunalmathur/Image-transformer/main/output/car-1_20260330_095544.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image Background Transformer - AI-Powered Background Removal">
+    <meta name="twitter:description" content="Transform your product images with AI-powered background removal and replacement. Perfect for automotive dealers, e-commerce, and product photography.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/iKunalmathur/Image-transformer/main/output/car-1_20260330_095544.jpg">
+    
     <style>
         :root {
             /* Light Theme - Vercel Inspired */
@@ -13,8 +34,8 @@
             --text-primary: #000000;
             --text-secondary: #666666;
             --text-tertiary: #171717;
-            --shadow: rgba(0,0,0,0.05);
-            --shadow-hover: rgba(0,0,0,0.1);
+            --shadow: rgba(0, 0, 0, 0.05);
+            --shadow-hover: rgba(0, 0, 0, 0.1);
             --border: #e5e5e5;
             --demo-before-bg: #fef2f2;
             --demo-before-text: #dc2626;
@@ -32,8 +53,8 @@
             --text-primary: #ffffff;
             --text-secondary: #888888;
             --text-tertiary: #ededed;
-            --shadow: rgba(255,255,255,0.05);
-            --shadow-hover: rgba(255,255,255,0.1);
+            --shadow: rgba(255, 255, 255, 0.05);
+            --shadow-hover: rgba(255, 255, 255, 0.1);
             --border: #333333;
             --demo-before-bg: #2d1515;
             --demo-before-text: #f87171;
@@ -65,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(var(--border) 1px, transparent 1px),
                 linear-gradient(90deg, var(--border) 1px, transparent 1px);
             background-size: 80px 80px;
@@ -198,6 +219,10 @@
             transition: all 0.2s;
             animation: fadeInUp 1s ease;
             border: 1px solid var(--text-primary);
+        }
+
+        [data-theme="light"] .cta-button {
+            border: 2px solid #ffffff;
         }
 
         .cta-button:hover {
@@ -435,7 +460,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
         }
 
         footer p {
@@ -448,6 +473,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -496,23 +522,28 @@
         /* Badge */
         .badge {
             display: inline-block;
-            background: #48bb78;
-            color: white;
+            background: var(--text-primary);
+            color: var(--bg-primary);
             padding: 0.5rem 1rem;
             border-radius: 6px;
             font-size: 0.875rem;
             margin-left: 1rem;
             font-weight: 600;
             transition: all 0.2s;
-            border: 1px solid #48bb78;
+            border: 1px solid var(--text-primary);
+        }
+
+        [data-theme="light"] .badge {
+            border: 2px solid #ffffff;
         }
 
         .badge:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+            box-shadow: 0 4px 12px var(--shadow-hover);
         }
     </style>
 </head>
+
 <body>
     <!-- Futuristic Background Elements -->
     <div class="grid-background"></div>
@@ -528,6 +559,8 @@
                 <a href="#features">Features</a>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#get-started">Get Started</a>
+                <a href="https://github.com/iKunalmathur/Image-transformer" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <span class="theme-icon" id="themeIcon">🌙</span>
                     <span id="themeText">Dark</span>
@@ -682,7 +715,7 @@ python main.py
             </div>
 
             <div style="margin-top: 3rem; text-align: center;">
-                <a href="https://github.com" class="cta-button" style="background: #48bb78; color: white;">
+                <a href="https://github.com/iKunalmathur/Image-transformer" class="cta-button">
                     View on GitHub →
                 </a>
             </div>
@@ -712,7 +745,7 @@ python main.py
         themeToggle.addEventListener('click', () => {
             const theme = html.getAttribute('data-theme');
             const newTheme = theme === 'light' ? 'dark' : 'light';
-            
+
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeButton(newTheme);
@@ -765,4 +798,5 @@ python main.py
         });
     </script>
 </body>
+
 </html>
